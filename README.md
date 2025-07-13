@@ -59,7 +59,7 @@ pip install opencv-python mediapipe pyautogui numpy
 ## 📦 Installation
 
 ```bash
-git clone https://github.com/sam-1409/Screen_controller.git
+git clone https://github.com/sam-1409/Screen_Controller.git
 cd screenController
 pip install -r requirements.txt
 ---
