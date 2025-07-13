@@ -60,6 +60,6 @@ pip install opencv-python mediapipe pyautogui numpy
 
 ```bash
 git clone https://github.com/sam-1409/mathSolver.git
-cd mathSolver
+cd screenController
 pip install -r requirements.txt
 ---
