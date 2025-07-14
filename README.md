@@ -39,7 +39,7 @@ pip install opencv-python mediapipe pyautogui numpy
 - **Move Cursor:** Look at the screen; your gaze moves the cursor.
 - **Enable/Disable Cursor:** Blink to toggle.
 - **Left Click:** Pinch thumb and index finger quickly.
-- **Double Click:** Two quick pinches.
+- **Double Click:** Pinch thumb, index and middle finger simultaneously.
 - **Drag:** Pinch and hold, then move your hand.
 - **Right Click:** Pinch thumb and middle finger together, index finger away.
 - **Zoom:** Show 2 or 4 fingers and pinch out.
