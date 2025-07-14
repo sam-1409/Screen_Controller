@@ -50,7 +50,7 @@ def video_capture():
     last_action_time = 0
     last_blink_time = 0
     pinch_drag_threshold = 0.5
-    double_click_threshold = 0.3
+    double_click_threshold = 0.7
     last_click_time = 0
     is_dragging = False
     neutral_x, neutral_y = None, None
@@ -126,6 +126,7 @@ def video_capture():
                 index_tip = hand_landmarks.landmark[8]
                 middle_tip = hand_landmarks.landmark[12]
                 pinch_dist = distance(thumb_tip, index_tip)
+                pinch2 = distance(thumb_tip, middle_tip)
                 count = count_fingers(hand_landmarks)
                 
                 if count == 2 and pinch_dist > 0.17 and current_time - last_action_time > delay:
@@ -149,13 +150,9 @@ def video_capture():
                         pg.mouseUp()  # End drag
                         is_dragging = False
                     elif pinch_duration <= pinch_drag_threshold:
-                        # Double click logic
-                        if current_time - last_click_time < double_click_threshold:
-                            pg.doubleClick()
-                            last_click_time = 0  # Reset to avoid triple click
-                        else:
-                            click_queue.put((curr_x, curr_y))
-                            last_click_time = current_time
+                        # Single click logic only
+                        click_queue.put((curr_x, curr_y))
+                        last_click_time = current_time
                     pinch_start_time = None
                     last_action_time = current_time
                     
@@ -171,8 +168,13 @@ def video_capture():
                         drag_prev_x, drag_prev_y = curr_x, curr_y
                         
                 #Right Click Logic
-                if distance(thumb_tip, middle_tip) < 0.08 and current_time - last_action_time > delay and pinch_dist >= 0.1:
+                if pinch2 < 0.08 and current_time - last_action_time > delay and pinch_dist >= 0.1:
                     pg.rightClick()
+                    last_action_time = current_time
+                
+                # Double click logic
+                if pinch2 < 0.08 and pinch_dist < 0.05 and current_time - last_action_time > delay:
+                    pg.doubleClick(duration=0.2)
                     last_action_time = current_time
 
         # Display the image
