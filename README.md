@@ -62,4 +62,13 @@ pip install opencv-python mediapipe pyautogui numpy
 git clone https://github.com/sam-1409/Screen_Controller.git
 cd screenController
 pip install -r requirements.txt
+
+---
+
+## 🛡️ License
+
+This project is licensed under the **Creative Commons Attribution–NonCommercial 4.0 International License**.  
+You may use, modify, and share it **only for non-commercial purposes**, with proper credit.  
+To learn more, visit: [https://creativecommons.org/licenses/by-nc/4.0/](https://creativecommons.org/licenses/by-nc/4.0/)
+
 ---
