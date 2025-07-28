@@ -129,6 +129,12 @@ def video_capture():
                 pinch2 = distance(thumb_tip, middle_tip)
                 count = count_fingers(hand_landmarks)
                 
+                
+                if count == 0 and current_time - last_action_time > delay:
+                    pg.keyDown('alt')
+                    pg.press('f4')
+                    pg.keyUp('alt')
+                    
                 if count == 2 and pinch_dist > 0.17 and current_time - last_action_time > delay:
                     pg.keyDown('ctrl')
                     pg.press('-')

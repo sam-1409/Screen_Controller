@@ -42,8 +42,9 @@ pip install opencv-python mediapipe pyautogui numpy
 - **Double Click:** Pinch thumb, index and middle finger simultaneously.
 - **Drag:** Pinch and hold, then move your hand.
 - **Right Click:** Pinch thumb and middle finger together, index finger away.
-- **Zoom:** Show 2 or 4 fingers and pinch out.
+- **Zoom:** Show 2 or 4 fingers for zoom out and zoom in respectively.
 - **Virtual Keyboard:** Use mouse or pinch to click keys. Hold Shift/Ctrl/Alt, then press another key for combos.
+- **Closing:** Make a fist to close the current opened window.
 
 ---
 
